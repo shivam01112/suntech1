@@ -25339,10 +25339,22 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
     padding: 10px 30px 30px 30px;
    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
    border-radius: 12px;
-   background-color: #f4f4f4;
+   background-color: #fcfcfc;
   }
 
   a[href*="amcharts.com"] {
   opacity: 0 !important;
   pointer-events: none;
+}
+
+
+.heading-underline::after {
+ content: "";
+    display: block;
+    width: 147px;
+    height: 6px;
+    margin: 12px auto 0;
+    background: linear-gradient(90deg, #9e3d50, #9e3d50);
+    border-radius: 3px;
+    box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
 }
