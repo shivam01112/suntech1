@@ -25132,80 +25132,217 @@ a {
 }
 
 
+        #chartdiv {
+            width: 100%;
+            height: 600px;
+            background: linear-gradient(135deg, #93c5eb 0%, #a8dadc 100%);
+            position: relative;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+               
+        }
 
- #chartdiv {
-      width: 100%;
-      height: 500px;
-      background-color: #93c5eb;
-      position: relative;
+        .map-marker {
+            position: absolute;
+            margin-left: -12px;
+            margin-top: -12px;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .map-marker:hover {
+            transform: scale(1.3);
+            z-index: 1000;
+        }
+
+        .pulse {
+            width: 18px;
+            height: 18px;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b6b, #9e3d50);
+            z-index: 10;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(238, 90, 36, 0.5);
+        }
+
+        .map-marker:hover .pulse {
+            background: linear-gradient(135deg, #ff4757, #ff3838);
+            box-shadow: 0 6px 25px rgba(255, 71, 87, 0.7);
+        }
+
+        .map-marker .dot {
+            border: 10px solid rgb(152 69 69 / 71%);
+            background: transparent;
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            position: absolute;
+            top: -17px;
+            left: -17px;
+            z-index: 1;
+            opacity: 0;
+        }
+
+        @keyframes pulse {
+            0% { 
+                transform: scale(0); 
+                opacity: 0.0; 
+            }
+            25% { 
+                transform: scale(0); 
+                opacity: 0.1; 
+            }
+            50% { 
+                transform: scale(0.1); 
+                opacity: 0.3; 
+            }
+            75% { 
+                transform: scale(0.5); 
+                opacity: 0.5; 
+            }
+            100% { 
+                transform: scale(1); 
+                opacity: 0.0; 
+            }
+        }
+
+        .map-tooltip {
+            position: fixed;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 12px;
+            pointer-events: none;
+            display: none;
+            z-index: 9999;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transform: translateY(-10px);
+        }
+
+        .map-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid #2c3e50;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .section-header-2 {
+                padding: 30px 20px;
+                margin-top: 30px;
+            }
+            
+            .page-title {
+                font-size: 32px;
+            }
+            
+            #chartdiv {
+                height: 400px;
+            }
+        }
+           .map-tooltip {
+  transform: translate(-55%, -20%);
+}
+
+ .stats-container {
+    background-color: #f9f9fc;
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+   margin-top: 30px !important;
+    margin: 0 auto;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    font-family: sans-serif;
+  }
+
+  .stats-box {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+
+  .stat-item {
+    min-width: 100px;
+  }
+
+  .stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e293b;
+  }
+
+  .stat-label {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .stats-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #64748b;
+    font-size: 14px;
+  }
+
+  .dot-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #9e3d50;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .footer-text {
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    .stats-box {
+      gap: 40px;
     }
 
-    .map-marker {
-      position: absolute;
-      margin-left: -8px;
-      margin-top: -8px;
+    .stat-number {
+      font-size: 26px;
     }
 
-    .pulse {
-      width: 10px;
-      height: 10px;
-      border: 5px solid #9e3d50;
-      border-radius: 30px;
-      background-color: #9e3d50;
-      z-index: 10;
-    }
-
-    .map-marker .dot {
-      border: 10px solid #9e3d50;
-      background: transparent;
-      border-radius: 60px;
-      height: 50px;
-      width: 50px;
-      animation: pulse 3s ease-out infinite;
-      position: absolute;
-      top: -20px;
-      left: -20px;
-      z-index: 1;
-      opacity: 0;
-    }
-
-    @keyframes pulse {
-      0%   { transform: scale(0);   opacity: 0.0; }
-      25%  { transform: scale(0);   opacity: 0.1; }
-      50%  { transform: scale(0.1); opacity: 0.3; }
-      75%  { transform: scale(0.5); opacity: 0.5; }
-      100% { transform: scale(1);   opacity: 0.0; }
-    }
-
-    .map-tooltip {
-      position: fixed;
-      padding: 6px 12px;
-      background: #222;
-      color: #fff;
+    .stat-label {
       font-size: 13px;
-      border-radius: 4px;
-      pointer-events: none;
-      display: none;
-      z-index: 9999;
     }
+  }
 
-    .section-header-2 {
-  text-align: center;
-  margin-bottom: 40px;
-  margin-top: 60px;
-}
+  .map_container{
+    margin-top: 30px;
+    padding: 10px 30px 30px 30px;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   border-radius: 12px;
+   background-color: #f4f4f4;
+  }
 
-.page-title {
-  font-size: 32px;
-  font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
-
-.title-underline {
-  width: 80px;
-  height: 4px;
-  background-color: #93c5eb;
-  margin: 0 auto;
-  border-radius: 2px;
+  a[href*="amcharts.com"] {
+  opacity: 0 !important;
+  pointer-events: none;
 }

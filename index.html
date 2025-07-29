@@ -985,27 +985,43 @@ At Suntech, Our recruiters understand the value of inclusion, local insights, an
 
 
 
- <div class="vl-blog-1-section-box heading2 text-center  my-5">
+
+<div class="container map_container">
+  <div class="vl-blog-1-section-box heading2 text-center  my-5">
        
           <div class="space16"></div>
-          <h2 class="vl-section-title" data-aos="zoom-in" data-aos-duration="1000">
+          <h2 class="vl-section-title " data-aos="zoom-in" data-aos-duration="1000">
        Countries We Serve
           </h2>
         </div>
-
-
- 
-<div id="chartdiv"></div>
-<div id="mapTooltip" class="map-tooltip"></div>
-<div class=" contry-name py-3 ps-3 " style="background-color: #93c5eb;">
-
-    <p > <strong>Countries We Serve:</strong> Canada | United Kingdom | Germany | Romania | Serbia | Croatia | Slovakia | Bulgaria | Jordan | Israel | Saudi Arabia | Qatar | UAE | Iraq | Kuwait | Oman | Bahrain | Russia</p>
   
+ <div id="chartdiv"></div>
+    <div id="mapTooltip" class="map-tooltip"></div>
+
+
+<div class="stats-container">
+  <div class="stats-box">
+    <div class="stat-item">
+      <div class="stat-number">18</div>
+      <div class="stat-label">COUNTRIES</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4</div>
+      <div class="stat-label">CONTINENTS</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">GLOBAL SUPPORT</div>
+    </div>
+  </div>
+  <div class="stats-footer">
+    <span class="dot-indicator"></span>
+    <span class="footer-text">Active Locations</span>
+    <span class="footer-text">Hover over markers for details</span>
+  </div>
 </div>
 
-
-
-
+</div>
 <!--===== CONTACT AREA STARTS =======-->
 <div class="contact2 sp1">
   <div class="container">
@@ -1301,129 +1317,131 @@ At Suntech, Our recruiters understand the value of inclusion, local insights, an
 <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
 <script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
 
-<script>
-  const tooltip = document.getElementById('mapTooltip');
 
-  const map = AmCharts.makeChart("chartdiv", {
-    type: "map",
-    theme: "none",
-    projection: "miller",
-    backgroundColor: "#93c5eb",
-    backgroundAlpha: 1,
 
-    imagesSettings: {
-      rollOverScale: 3,
-      selectedScale: 3,
-      color: "#13564e"
-    },
+ <script>
+        const tooltip = document.getElementById('mapTooltip');
 
-    areasSettings: {
-      unlistedAreasColor: "#f0ede5",
-      color: "#f0ede5",
-      outlineColor: "#000000",
-      outlineAlpha: 1,
-      outlineThickness: 2,
-      rollOverColor: "#e8e5dd",
-      rollOverOutlineColor: "#000000",
-      selectedColor: "#d6d1c4"
-    },
+        const map = AmCharts.makeChart("chartdiv", {
+            type: "map",
+            theme: "none",
+            projection: "miller",
+            backgroundColor: "transparent",
+            backgroundAlpha: 0,
 
-    exportConfig: {
-      menuTop: "20px",
-      menuRight: "20px",
-      menuItems: [{
-        icon: '/lib/3/images/export.png',
-        format: 'png'
-      }]
-    },
+            imagesSettings: {
+                rollOverScale: 3,
+                selectedScale: 3,
+                color: "#13564e"
+            },
 
-    dataProvider: {
-      map: "worldLow",
-      images: [
-        { title: "Canada", latitude: 56.1304, longitude: -106.3468 },
-        { title: "United Kingdom", latitude: 55.3781, longitude: -3.4360 },
-        { title: "Germany", latitude: 51.1657, longitude: 10.4515 },
-        { title: "Romania", latitude: 45.9432, longitude: 24.9668 },
-        { title: "Serbia", latitude: 44.0165, longitude: 21.0059 },
-        { title: "Croatia", latitude: 45.1, longitude: 15.2 },
-        { title: "Slovakia", latitude: 48.6690, longitude: 19.6990 },
-        { title: "Bulgaria", latitude: 42.7339, longitude: 25.4858 },
-        { title: "Jordan", latitude: 30.5852, longitude: 36.2384 },
-        { title: "Israel", latitude: 31.0461, longitude: 34.8516 },
-        { title: "Saudi Arabia", latitude: 23.8859, longitude: 45.0792 },
-        { title: "Qatar", latitude: 25.3548, longitude: 51.1839 },
-        { title: "UAE", latitude: 23.4241, longitude: 53.8478 },
-        { title: "Iraq", latitude: 33.2232, longitude: 43.6793 },
-        { title: "Kuwait", latitude: 29.3117, longitude: 47.4818 },
-        { title: "Oman", latitude: 21.5126, longitude: 57.8492 },
-        { title: "Bahrain", latitude: 26.0667, longitude: 50.5577 },
-        { title: "Russia", latitude: 61.5240, longitude: 105.3188 }
-      ]
-    }
-  });
+            areasSettings: {
+                unlistedAreasColor: "#f0ede5",
+                color: "#f0ede5",
+                outlineColor: "#000000",
+                outlineAlpha: 1,
+                outlineThickness: 2,
+                rollOverColor: "#e8e5dd",
+                rollOverOutlineColor: "#000000",
+                selectedColor: "#d6d1c4"
+            },
 
-  // Force black dashed borders after map loads
-  map.addListener("rendered", function() {
-    // Find all path elements and set stroke to black dashed
-    const paths = map.chartDiv.querySelectorAll('path');
-    paths.forEach(path => {
-      if (path.getAttribute('fill') === '#f0ede5' || path.getAttribute('fill') === 'rgb(240, 237, 229)') {
-        path.setAttribute('stroke', '#000000');
-        path.setAttribute('stroke-width', '1');
-        path.setAttribute('stroke-dasharray', '4,1');
-        path.style.stroke = '#000000';
-        path.style.strokeWidth = '0.5';
-        path.style.strokeDasharray = '4,1';
-      }
-    });
-  });
+            exportConfig: {
+                menuTop: "20px",
+                menuRight: "20px",
+                menuItems: [{
+                    icon: '/lib/3/images/export.png',
+                    format: 'png'
+                }]
+            },
 
-  map.addListener("positionChanged", updateCustomMarkers);
-  updateCustomMarkers({ chart: map });
+            dataProvider: {
+                map: "worldLow",
+                images: [
+                    { title: "Canada", latitude: 56.1304, longitude: -106.3468 },
+                    { title: "United Kingdom", latitude: 55.3781, longitude: -3.4360 },
+                    { title: "Germany", latitude: 51.1657, longitude: 10.4515 },
+                    { title: "Romania", latitude: 45.9432, longitude: 24.9668 },
+                    { title: "Serbia", latitude: 44.0165, longitude: 21.0059 },
+                    { title: "Croatia", latitude: 45.1, longitude: 15.2 },
+                    { title: "Slovakia", latitude: 48.6690, longitude: 19.6990 },
+                    { title: "Bulgaria", latitude: 42.7339, longitude: 25.4858 },
+                    { title: "Jordan", latitude: 30.5852, longitude: 36.2384 },
+                    { title: "Israel", latitude: 31.0461, longitude: 34.8516 },
+                    { title: "Saudi Arabia", latitude: 23.8859, longitude: 45.0792 },
+                    { title: "Qatar", latitude: 25.3548, longitude: 51.1839 },
+                    { title: "UAE", latitude: 23.4241, longitude: 53.8478 },
+                    { title: "Iraq", latitude: 33.2232, longitude: 43.6793 },
+                    { title: "Kuwait", latitude: 29.3117, longitude: 47.4818 },
+                    { title: "Oman", latitude: 21.5126, longitude: 57.8492 },
+                    { title: "Bahrain", latitude: 26.0667, longitude: 50.5577 },
+                    { title: "Russia", latitude: 61.5240, longitude: 105.3188 }
+                ]
+            }
+        });
 
-  function updateCustomMarkers(event) {
-    const map = event.chart;
-    for (let x in map.dataProvider.images) {
-      let image = map.dataProvider.images[x];
-      if (!image.externalElement) {
-        image.externalElement = createCustomMarker(image);
-      }
-      const xy = map.coordinatesToStageXY(image.longitude, image.latitude);
-      image.externalElement.style.top = xy.y + 'px';
-      image.externalElement.style.left = xy.x + 'px';
-    }
-  }
+        // Force black dashed borders after map loads
+        map.addListener("rendered", function() {
+            // Find all path elements and set stroke to black dashed
+            const paths = map.chartDiv.querySelectorAll('path');
+            paths.forEach(path => {
+                if (path.getAttribute('fill') === '#f0ede5' || path.getAttribute('fill') === 'rgb(240, 237, 229)') {
+                    path.setAttribute('stroke', '#000000');
+                    path.setAttribute('stroke-width', '1');
+                    path.setAttribute('stroke-dasharray', '4,1');
+                    path.style.stroke = '#000000';
+                    path.style.strokeWidth = '0.5';
+                    path.style.strokeDasharray = '4,1';
+                }
+            });
+        });
 
-  function createCustomMarker(image) {
-    const holder = document.createElement('div');
-    holder.className = 'map-marker';
+        map.addListener("positionChanged", updateCustomMarkers);
+        updateCustomMarkers({ chart: map });
 
-    const dot = document.createElement('div');
-    dot.className = 'dot';
-    holder.appendChild(dot);
+        function updateCustomMarkers(event) {
+            const map = event.chart;
+            for (let x in map.dataProvider.images) {
+                let image = map.dataProvider.images[x];
+                if (!image.externalElement) {
+                    image.externalElement = createCustomMarker(image);
+                }
+                const xy = map.coordinatesToStageXY(image.longitude, image.latitude);
+                image.externalElement.style.top = xy.y + 'px';
+                image.externalElement.style.left = xy.x + 'px';
+            }
+        }
 
-    const pulse = document.createElement('div');
-    pulse.className = 'pulse';
-    holder.appendChild(pulse);
+        function createCustomMarker(image) {
+            const holder = document.createElement('div');
+            holder.className = 'map-marker';
 
-    holder.addEventListener('mouseenter', () => {
-      tooltip.innerText = image.title;
-      tooltip.style.display = 'block';
-    });
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            holder.appendChild(dot);
 
-    holder.addEventListener('mouseleave', () => {
-      tooltip.style.display = 'none';
-    });
+            const pulse = document.createElement('div');
+            pulse.className = 'pulse';
+            holder.appendChild(pulse);
 
-    holder.addEventListener('mousemove', (e) => {
-      tooltip.style.top = (e.clientY + 10) + 'px';
-      tooltip.style.left = (e.clientX + 10) + 'px';
-    });
+            holder.addEventListener('mouseenter', () => {
+                tooltip.innerText = image.title;
+                tooltip.style.display = 'block';
+            });
 
-    image.chart.chartDiv.appendChild(holder);
-    return holder;
-  }
-</script>
+            holder.addEventListener('mouseleave', () => {
+                tooltip.style.display = 'none';
+            });
+
+            holder.addEventListener('mousemove', (e) => {
+                tooltip.style.top = (e.clientY - 50) + 'px';
+                tooltip.style.left = (e.clientX + 15) + 'px';
+            });
+
+            image.chart.chartDiv.appendChild(holder);
+            return holder;
+        }
+    </script>
 
  <script src="https://maps-sdk.trimblemaps.com/v4/trimblemaps-4.2.3.js"></script>
 
