@@ -25417,6 +25417,17 @@ body {
     right: -19%;
   
 }
+.iso-img{
+  width: 50% !important;
+}
+.abt-logos{
+  text-align: center;
+}
+.abt-logos img{
+  width: 90%;
+  text-align: center;
+}
+
   #vlNavbarMenu {
     background: #ffffff;
   
@@ -25437,7 +25448,32 @@ body {
     padding-left: 0;
     margin: 0;
   }
-
+   .stats-footer {
+    gap: 0 !important;
+    display: block !important;         /* optional override */
+    justify-content: unset !important; /* optional override */
+    align-items: unset !important;     /* optional override */
+    font-size: inherit !important;     /* optional override */
+    color: inherit !important;         /* optional override */
+  }
+  .content-box h5 {
+    font-size: 28px;
+    line-height: 33px;
+    padding: 0px 0px;
+    font-weight: 700;
+}
+      .heading2 h2 {
+        font-size: var(--ztc-font-size-font-s32);
+        line-height: 32px;
+        font-size: 22px;
+        font-weight: 700 !important;
+    }
+    .abt-btn-cs{
+      margin: 0 !important;
+    }
+.md-signature{
+  text-align: center;
+}
   .vl-main-menu .main-menu > li {
     margin-bottom: 10px;
   }
