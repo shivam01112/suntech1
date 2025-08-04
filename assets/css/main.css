@@ -25420,7 +25420,7 @@ body {
 }
   #vlNavbarMenu {
     background: #ffffff;
-    padding: 15px 20px;
+  
     position: absolute;
     top: 100%;
     left: 0;
@@ -25445,7 +25445,7 @@ body {
 
   .vl-main-menu .main-menu > li > a {
     display: block;
-    color: #000;
+    color: #FFF;
     padding: 8px 0;
     text-decoration: none;
   }
@@ -25453,7 +25453,7 @@ body {
   .vl-main-menu .has-submenu > a::after {
     content: " ▾";
     float: right;
-    font-size: 12px;
+    font-size: 22px;
   }
 
   .vl-main-menu .submenu {
@@ -25472,6 +25472,19 @@ body {
     font-size: 14px;
     color: #444;
   }
+
+  .main-menu > li > a {
+    color: #000; 
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 13px;
+    text-decoration: none;
+    /* padding: 10px; */
+    font-weight: 500;
+   
+   text-shadow: none;
+    transition: color 0.3s, text-shadow 0.3s;
+}
 
 }
 .navbar-toggler-icon {
@@ -25531,13 +25544,13 @@ body {
     padding: 0;
     margin: 0;
     list-style: none;
-    background-color: #fff;
+    background-color: #7c142f;
     width: 100%;
   }
 
   .vl-main-menu ul.main-menu li {
     text-align: left;
-    padding: 10px 20px;
+    padding: 0px 14px;
     width: 100%;
   }
 
@@ -25551,7 +25564,7 @@ body {
   .vl-main-menu ul.submenu {
     position: static !important;
     display: none;
-    background: #f8f8f8;
+  
     padding-left: 20px;
   }
 
