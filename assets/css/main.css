@@ -25399,11 +25399,10 @@ body {
 
 @media screen and (max-width: 576px) {
  .bottom-button {
-    position: fixed;
-    bottom: 70px;
-    
-    left: 77% !important;
-    width: 40%;
+           position: fixed;
+        bottom: 70px;
+        left: 72% !important;
+        width: 46%;
  }
  .slick-track{
   width: 100% !important;
