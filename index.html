@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
      <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
      <title> Suntech  - Staffing And Agency</title>
 
      <!--=====FAB ICON=======-->
@@ -1313,6 +1315,44 @@ At Suntech, Our recruiters understand the value of inclusion, local insights, an
   </div>
 </a>
 
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,ru,de,el,ar,iw',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+
+  // Load script
+  (function () {
+    var gt = document.createElement('script');
+    gt.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    gt.type = "text/javascript";
+    document.head.appendChild(gt);
+  })();
+
+  // Language click handler
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.lang').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        const lang = el.getAttribute('data-lang');
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = lang;
+          select.dispatchEvent(new Event('change'));
+        }
+      });
+    });
+  });
+</script>
+
+
+<script type="text/javascript" 
+src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
 <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
 <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
 <script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
@@ -1325,49 +1365,6 @@ At Suntech, Our recruiters understand the value of inclusion, local insights, an
 
 
 <!-- Google Translate Script Loader -->
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      includedLanguages: 'en,ru,de,el,ar,he',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-
-  // Load Google Translate script
-  (function () {
-    const gtScript = document.createElement('script');
-    gtScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    document.head.appendChild(gtScript);
-  })();
-
-  // Language switcher handler
-  document.addEventListener('DOMContentLoaded', function () {
-    const langButtons = document.querySelectorAll('.lang');
-    langButtons.forEach(btn => {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        const lang = this.getAttribute('data-lang');
-        const langMap = {
-          'en': 'en',
-          'ru': 'ru',
-          'de': 'de',
-          'el': 'el',
-          'ar': 'ar',
-          'he': 'iw' // Hebrew is 'iw' in Google Translate
-        };
-
-        const select = document.querySelector('.goog-te-combo');
-        if (select) {
-          select.value = langMap[lang];
-          select.dispatchEvent(new Event('change'));
-        } else {
-          alert("Google Translate not loaded yet. Please wait...");
-        }
-      });
-    });
-  });
-</script>
 
 
 

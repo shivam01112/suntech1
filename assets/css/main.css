@@ -47,6 +47,11 @@ Location:
 	--------------------------------- 
       FOOTER CSS AREA
 
+
+
+
+
+
 	---------------------------------  
 	 07. PAGES CSS 
 	---------------------------------  
@@ -7785,6 +7790,7 @@ img {
 }
 .vl-footer2-section-area .copyright-area ul li {
   display: inline-block;
+  margin-right: 80px;
 }
 .vl-footer2-section-area .copyright-area ul li a {
   color: var(--ztc-text-text-5);
@@ -11506,9 +11512,7 @@ img {
   padding: 16px 0;
 }
 @media (max-width: 767px) {
-  .homepage2-body .vl-transparent-header {
-    background: var(--ztc-bg-bg-7);
-  }
+
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .homepage2-body .vl-transparent-header {
@@ -24348,7 +24352,7 @@ font-size: 28px;
     cursor: pointer;
     padding: 17px;
     font-size: 24px;
-    margin-top: 30px;
+    
 }
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled):hover{
   color: #fff;
@@ -25241,9 +25245,7 @@ a {
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
+          
             
             .section-header-2 {
                 padding: 30px 20px;
@@ -25357,4 +25359,203 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
     background: linear-gradient(90deg, #9e3d50, #9e3d50);
     border-radius: 3px;
     box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
+}
+.goog-logo-link, .goog-te-gadget span {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+.goog-te-gadget-simple {
+    background-color: #FFF;
+    border-left: 1px solid #D5D5D5;
+    border-top: 1px solid #9B9B9B;
+    border-bottom: 1px solid #E8E8E8;
+    border-right: 1px solid #D5D5D5;
+    font-size: 21pt !important;
+    display: inline-block;
+    padding-top: 1px;
+    padding-bottom: 2px;
+    cursor: pointer;
+    opacity: 0 !important;
+    
+}
+
+.goog-te-gadget{
+  margin-top: 0px;
+  margin-right: 40%;
+  transform: rotate(90deg);
+  opacity: 0;
+}
+#google_translate_element{
+  opacity: 0 !important;
+}
+
+
+@media screen and (max-width: 576px) {
+ .bottom-button {
+    position: fixed;
+    bottom: 70px;
+    
+    left: 77% !important;
+    width: 40%;
+ }
+ .slick-track{
+  width: 100% !important;
+ }
+ .homepage2-body .vl-transparent-header {
+    
+    padding: 0px 0;
+}
+.bottom-button2 {
+    position: fixed;
+    bottom: 20px;
+    right: -19%;
+  
+}
+  #vlNavbarMenu {
+    background: #ffffff;
+    padding: 15px 20px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    text-align: left;
+  }
+
+  .vl-main-menu {
+    text-align: left !important;
+  }
+
+  .vl-main-menu .main-menu {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .vl-main-menu .main-menu > li {
+    margin-bottom: 10px;
+  }
+
+  .vl-main-menu .main-menu > li > a {
+    display: block;
+    color: #000;
+    padding: 8px 0;
+    text-decoration: none;
+  }
+
+  .vl-main-menu .has-submenu > a::after {
+    content: " ▾";
+    float: right;
+    font-size: 12px;
+  }
+
+  .vl-main-menu .submenu {
+    display: none;
+    padding-left: 15px;
+    margin-top: 5px;
+  }
+
+  .vl-main-menu .has-submenu:hover .submenu {
+    display: block;
+  }
+
+  .vl-main-menu .submenu li a {
+    padding: 5px 0;
+    display: block;
+    font-size: 14px;
+    color: #444;
+  }
+
+}
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+#global-header .vl-logo img {
+  max-height: 50px;
+  width: auto;
+}
+
+
+
+/* Main menu for desktop */
+.vl-main-menu {
+  text-align: center;
+}
+/* Ensure logo and menu toggle stack properly on small screens */
+#global-header .vl-logo img {
+  max-height: 50px;
+  width: auto;
+}
+
+.vl-header-area {
+ 
+}
+
+/* Main menu for desktop */
+.vl-main-menu {
+  text-align: center;
+}
+
+/* Fix broken layout on mobile */
+@media (max-width: 991.98px) {
+  /* Force header to stack properly */
+  #global-header .row {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  /* Collapse menu full-width under toggle */
+  .vl-main-menu {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .vl-main-menu ul.main-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #fff;
+    width: 100%;
+  }
+
+  .vl-main-menu ul.main-menu li {
+    text-align: left;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  .vl-main-menu ul.main-menu li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+  }
+
+  /* Fix submenu alignment */
+  .vl-main-menu ul.submenu {
+    position: static !important;
+    display: none;
+    background: #f8f8f8;
+    padding-left: 20px;
+  }
+
+  .vl-main-menu ul.main-menu li.has-submenu:hover > .submenu {
+    display: block;
+  }
 }
