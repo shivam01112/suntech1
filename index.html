@@ -128,7 +128,7 @@
           <div class="row">
           <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">
             <div class="img1">
-              <img src="assets/img/all-images/about/about-img2.png" alt="">
+              <img src="assets/img/homepageimg/1.webp" alt="">
             </div>
           </div>
 
@@ -136,7 +136,7 @@
             <div class="img1">
               <div class="space100 d-md-block d-none"></div>
               <div class="space30 d-md-none d-block"></div>
-              <img src="assets/img/all-images/about/about-img3.png" alt="">
+              <img src="assets/img/homepageimg/2.webp" alt="">
             </div>
           </div>
         </div>
@@ -345,7 +345,7 @@
           <div class="row align-items-center">
             <div class="col-lg-4">
               <div class="img1">
-                <img src="assets/img/all-images/service/service-img3.png" alt="">
+                <img src="assets/img/homepageimg/bluecollar.webp" alt="">
               </div>
             </div>
 
@@ -375,7 +375,7 @@
           <div class="row align-items-center">
             <div class="col-lg-4">
               <div class="img1">
-                <img src="assets/img/all-images/service/service-img4.png" alt="">
+                <img src="assets/img/homepageimg/white.webp" alt="">
               </div>
             </div>
 
@@ -408,7 +408,7 @@
           <div class="row align-items-center">
             <div class="col-lg-4">
               <div class="img1">
-                <img src="assets/img/all-images/service/service-img3.png" alt="">
+                <img src="assets/img/homepageimg/health.webp" alt="">
               </div>
             </div>
 
@@ -438,7 +438,7 @@
           <div class="row align-items-center">
             <div class="col-lg-4">
               <div class="img1">
-                <img src="assets/img/all-images/service/service-img5.png" alt="">
+                <img src="assets/img/homepageimg/traing.webp" alt="">
               </div>
             </div>
 
@@ -1290,7 +1290,7 @@ At Suntech, Our recruiters understand the value of inclusion, local insights, an
 
 
 
-
+<div id="google_translate_element" style="display: none;"></div>
 
 
 
@@ -1316,6 +1316,69 @@ At Suntech, Our recruiters understand the value of inclusion, local insights, an
 <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
 <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
 <script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
+
+
+
+
+
+
+
+
+<!-- Google Translate Script Loader -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,ru,de,el,ar,he',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+
+  // Load Google Translate script
+  (function () {
+    const gtScript = document.createElement('script');
+    gtScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.head.appendChild(gtScript);
+  })();
+
+  // Language switcher handler
+  document.addEventListener('DOMContentLoaded', function () {
+    const langButtons = document.querySelectorAll('.lang');
+    langButtons.forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const lang = this.getAttribute('data-lang');
+        const langMap = {
+          'en': 'en',
+          'ru': 'ru',
+          'de': 'de',
+          'el': 'el',
+          'ar': 'ar',
+          'he': 'iw' // Hebrew is 'iw' in Google Translate
+        };
+
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = langMap[lang];
+          select.dispatchEvent(new Event('change'));
+        } else {
+          alert("Google Translate not loaded yet. Please wait...");
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
