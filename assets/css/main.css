@@ -24420,7 +24420,7 @@ iframe{
 
 #faqAccordion .accordion-button {
   background-color: #f8f9fa;
-  color: #333;
+  color: #333 !important;
   font-weight: 600;
   padding: 1rem 1.25rem;
   transition: background-color 0.3s ease;
