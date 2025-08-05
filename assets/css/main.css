@@ -25547,7 +25547,7 @@ body {
     width: 1.5em;
     height: 1.5em;
     vertical-align: middle;
-   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+   background-image: url("../img/settings_13959791.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
@@ -25641,12 +25641,12 @@ body {
 
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled):hover {
     color: #fff !important;
-    background: #9e384d;
+ 
 }
 
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
     cursor: pointer;
     padding: 4px;
-    font-size: 14px;
+    font-size: 17px;
     color: #fff !important;
 }
