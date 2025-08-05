@@ -1674,7 +1674,7 @@ img {
 }
 @media (max-width: 767px) {
   .sp1 {
-    padding: 50px 0 50px;
+    padding: 0px 0 50px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -7754,7 +7754,7 @@ img {
 @media (max-width: 767px) {
   .vl-footer2-section-area .copyright-area {
     display: block;
-    text-align: center;
+    
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -25398,12 +25398,15 @@ body {
 
 
 @media screen and (max-width: 576px) {
- .bottom-button {
-           position: fixed;
+     .bottom-button {
+        position: fixed;
         bottom: 70px;
-        left: 72% !important;
-        width: 46%;
- }
+        left: 77% !important;
+        width: 42%;
+    }
+    .img-11{
+      display: none;
+    }
  .slick-track{
   width: 100% !important;
  }
@@ -25420,9 +25423,7 @@ body {
 .iso-img{
   width: 50% !important;
 }
-.abt-logos{
-  text-align: center;
-}
+
 .abt-logos img{
   width: 90%;
   text-align: center;
@@ -25465,12 +25466,31 @@ body {
       .heading2 h2 {
         font-size: var(--ztc-font-size-font-s32);
         line-height: 32px;
-        font-size: 22px;
+        font-size: 32px;
         font-weight: 700 !important;
     }
     .abt-btn-cs{
       margin: 0 !important;
     }
+    .btn-area1{
+      margin: 0px !important;
+    }
+    .benefit1 .benefit-images-area .tab-content .tab-pane .images img {
+   
+    height: 300px;
+}
+.counter-label {
+    font-size: 18px !important;
+  
+}
+.counter-label {
+    
+    margin-top: 8px !important;
+ 
+}
+.ser-head{
+  padding-top: 50px;
+}
 .md-signature{
   text-align: center;
 }
@@ -25500,7 +25520,7 @@ body {
   .vl-main-menu .has-submenu:hover .submenu {
     display: block;
   }
-
+ 
   .vl-main-menu .submenu li a {
     padding: 5px 0;
     display: block;
@@ -25617,4 +25637,16 @@ body {
      border-bottom: none !important; 
         margin: 0;
     box-shadow: none !important;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled):hover {
+    color: #fff !important;
+    background: #9e384d;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+    padding: 4px;
+    font-size: 14px;
+    color: #fff !important;
 }
