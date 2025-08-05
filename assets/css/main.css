@@ -25489,7 +25489,7 @@ body {
  
 }
 .ser-head{
-  padding-top: 50px;
+  padding-top: 50px !important;
 }
 .md-signature{
   text-align: center;
@@ -25657,14 +25657,3 @@ body {
  
 }
 
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
-    cursor: pointer;
-    padding: 12px;
-    font-size: 17px;
-    color: #fff !important;
-}
-
-a:not([href]):not([class]), a:not([href]):not([class]):hover {
- color: #ffff; 
-    text-decoration: none;
-}
