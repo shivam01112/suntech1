@@ -1315,43 +1315,8 @@ At Suntech, Our recruiters understand the value of inclusion, local insights, an
   </div>
 </a>
 
-<script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      includedLanguages: 'en,ru,de,el,ar,iw',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-
-  // Load script
-  (function () {
-    var gt = document.createElement('script');
-    gt.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    gt.type = "text/javascript";
-    document.head.appendChild(gt);
-  })();
-
-  // Language click handler
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.lang').forEach(function (el) {
-      el.addEventListener('click', function (e) {
-        e.preventDefault();
-        const lang = el.getAttribute('data-lang');
-        const select = document.querySelector('.goog-te-combo');
-        if (select) {
-          select.value = lang;
-          select.dispatchEvent(new Event('change'));
-        }
-      });
-    });
-  });
-</script>
-
-
-<script type="text/javascript" 
-src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+<!-- Language Translation Handler -->
+<script src="assets/js/language-handler-final.js"></script>
 
 <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
 <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>

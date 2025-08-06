@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Language Dropdown Demo</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 50px;
+            min-height: 100vh;
+        }
+        
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .demo-header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .demo-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .demo-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .demo-navigation {
+            background: rgba(171, 66, 87, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .features-list {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            color: white;
+        }
+        
+        .features-list h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .features-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .features-list li::before {
+            content: '✓';
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>Enhanced Language Dropdown</h1>
+            <p>Modern UI/UX improvements for Google Translate integration</p>
+        </div>
+        
+        <div class="demo-navigation">
+            <nav class="vl-mobile-menu-active">
+                <ul class="main-menu">
+                    <li><a href="#" style="color: #fff;">Home</a></li>
+                    <li><a href="#" style="color: #fff;">About</a></li>
+                    <li><a href="#" style="color: #fff;">Services</a></li>
+                    
+                    <li class="has-submenu language-dropdown">
+                        <a style="color: #fff;"><i class="fas fa-globe me-2"></i>Language</a>
+                        <ul class="submenu language-submenu">
+                            <li class="language-header">
+                                <span class="language-title">Select Language</span>
+                            </li>
+                            <li class="google-translate-wrapper">
+                                <div id="google_translate_element"></div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="features-list">
+            <h2>🚀 Enhancement Features</h2>
+            <ul>
+                <li>Modern gradient background with transparency effects</li>
+                <li>Smooth hover animations and transitions</li>
+                <li>Globe icon with rotating arrow indicator</li>
+                <li>Professional header section with language title</li>
+                <li>Enhanced visual hierarchy and spacing</li>
+                <li>Responsive design for mobile devices</li>
+                <li>Subtle shadow and backdrop blur effects</li>
+                <li>Bootstrap-inspired clean styling</li>
+                <li>Improved Google Translate widget styling</li>
+                <li>Better accessibility and user experience</li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'ar,en,de,el,he,ru,es,fr,it,pt,zh',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                multilanguagePage: true
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

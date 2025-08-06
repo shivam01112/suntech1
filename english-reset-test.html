@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Reset Test - Language Translation</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 30px;
+            min-height: 100vh;
+        }
+        
+        .test-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .test-header {
+            background: rgba(171, 66, 87, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .test-steps {
+            background: rgba(76, 175, 80, 0.2);
+            border-left: 4px solid #4CAF50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .status-info {
+            background: rgba(255, 152, 0, 0.2);
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .test-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <!-- Navigation with Language Dropdown -->
+        <div class="test-header">
+            <nav class="vl-mobile-menu-active">
+                <ul class="main-menu">
+                    <li><a href="#" style="color: #fff;">Home</a></li>
+                    <li><a href="#" style="color: #fff;">About</a></li>
+                    
+                    <li class="has-submenu language-dropdown">
+                        <a style="color: #fff;"><i class="fas fa-globe me-2"></i>Language</a>
+                        <ul class="submenu language-submenu">
+                            <li class="language-header">
+                                <span class="language-title">Select Language</span>
+                            </li>
+                            <li><a href="#" onclick="changeLanguage('en')" class="lang-option active"><span class="flag-placeholder usa-flag"></span> English</a></li>
+                            <li><a href="#" onclick="changeLanguage('ru')" class="lang-option"><span class="flag-placeholder russia-flag"></span> Russian</a></li>
+                            <li><a href="#" onclick="changeLanguage('de')" class="lang-option"><span class="flag-placeholder germany-flag"></span> German</a></li>
+                            <li><a href="#" onclick="changeLanguage('el')" class="lang-option"><span class="flag-placeholder greece-flag"></span> Greek</a></li>
+                            <li><a href="#" onclick="changeLanguage('ar')" class="lang-option"><span class="flag-placeholder saudi-flag"></span> Arabic</a></li>
+                            <li><a href="#" onclick="changeLanguage('he')" class="lang-option"><span class="flag-placeholder israel-flag"></span> Hebrew</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Test Content -->
+        <div class="content-section">
+            <h1>🔄 English Reset Test</h1>
+            
+            <div class="test-steps">
+                <h3>📋 Testing Steps:</h3>
+                <ol>
+                    <li><strong>Step 1:</strong> Click on any language (Russian, German, etc.) - Page should translate</li>
+                    <li><strong>Step 2:</strong> Click on "English" - Page should reload and reset to original English</li>
+                    <li><strong>Step 3:</strong> Repeat with different languages to verify English reset works consistently</li>
+                </ol>
+            </div>
+            
+            <div class="status-info">
+                <h3>📊 Current Status:</h3>
+                <p><strong>Current URL Hash:</strong> <span id="current-hash">none</span></p>
+                <p><strong>Translation Status:</strong> <span id="translation-status">Original English</span></p>
+                <p><strong>Active Language:</strong> <span id="active-language">English</span></p>
+                <p><strong>Google Translate Cookies:</strong> <span id="cookie-status">none</span></p>
+                <p><strong>Translation Storage:</strong> <span id="storage-status">none</span></p>
+            </div>
+            
+            <div class="test-text">
+                <h2>Welcome to Suntech Engineering Services</h2>
+                <p>This is original English content. When you select other languages, this text should be translated. When you click "English" again, it should return to this original English text without any translation artifacts.</p>
+            </div>
+            
+            <div class="test-text">
+                <h3>Our Core Services:</h3>
+                <ul>
+                    <li>Recruitment and Staffing Solutions</li>
+                    <li>Professional Placement Services</li>
+                    <li>Industry-Specific Talent Acquisition</li>
+                    <li>Training and Development Programs</li>
+                    <li>Consulting and Advisory Services</li>
+                </ul>
+            </div>
+            
+            <div class="test-text">
+                <h3>Quality Standards:</h3>
+                <p>We maintain the highest standards in recruitment processes, ensuring perfect matches between candidates and employers. Our services span multiple industries including construction, healthcare, hospitality, and technology sectors.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display: none;"></div>
+    
+    <script src="assets/js/language-handler-final.js"></script>
+    
+    <script>
+        // Update status information
+        function updateStatus() {
+            var hashElement = document.getElementById('current-hash');
+            var statusElement = document.getElementById('translation-status');
+            var activeElement = document.getElementById('active-language');
+            var cookieElement = document.getElementById('cookie-status');
+            var storageElement = document.getElementById('storage-status');
+            
+            // Show current hash
+            var hash = window.location.hash || 'none';
+            hashElement.textContent = hash;
+            
+            // Check for Google Translate cookies
+            var gtCookies = [];
+            document.cookie.split(';').forEach(function(cookie) {
+                var cookieName = cookie.split('=')[0].trim();
+                if (cookieName.toLowerCase().indexOf('goog') !== -1) {
+                    gtCookies.push(cookieName);
+                }
+            });
+            cookieElement.textContent = gtCookies.length > 0 ? gtCookies.join(', ') : 'none';
+            
+            // Check for translation storage
+            var gtStorage = [];
+            try {
+                if (typeof(Storage) !== "undefined" && localStorage) {
+                    for (let i = 0; i < localStorage.length; i++) {
+                        const key = localStorage.key(i);
+                        if (key && (key.indexOf('goog') !== -1 || key.indexOf('translate') !== -1)) {
+                            gtStorage.push(key);
+                        }
+                    }
+                }
+            } catch(e) {}
+            storageElement.textContent = gtStorage.length > 0 ? gtStorage.join(', ') : 'none';
+            
+            // Determine translation status
+            if (hash.includes('googtrans')) {
+                var matches = hash.match(/googtrans\(en\|([^)]*)\)/);
+                if (matches && matches[1]) {
+                    statusElement.textContent = 'Translated to: ' + matches[1].toUpperCase();
+                    activeElement.textContent = getLanguageName(matches[1]);
+                }
+            } else {
+                statusElement.textContent = 'Original English';
+                activeElement.textContent = 'English';
+            }
+        }
+        
+        function getLanguageName(code) {
+            var names = {
+                'en': 'English',
+                'ru': 'Russian', 
+                'de': 'German',
+                'el': 'Greek',
+                'ar': 'Arabic',
+                'he': 'Hebrew'
+            };
+            return names[code] || code;
+        }
+        
+        // Update status on load and hash change
+        window.addEventListener('load', updateStatus);
+        window.addEventListener('hashchange', updateStatus);
+        
+        // Update status every second
+        setInterval(updateStatus, 1000);
+    </script>
+</body>
+</html>

@@ -61,9 +61,18 @@
                 <li><a href="blogs.html">Blog</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
 
-                <li class="has-submenu"><a style="color: #fff;">Language</a>
-                  <ul class="submenu"  style="background-color: transparent !important;">
-                    <div id="google_translate_element"></div>
+                <li class="has-submenu language-dropdown"><a style="color: #fff;background: #993349;border-radius:10px;padding-left:15px;padding-right:15px;"><i class="fas fa-globe me-2"></i>Languages <i class="fas fa-angle-down"></i>
+</a>
+                  <ul class="submenu language-submenu">
+                    <li><a href="#" onclick="changeLanguage('en')" class="lang-option active"><span class="flag-placeholder usa-flag"></span> English</a></li>
+                    <li><a href="#" onclick="changeLanguage('ru')" class="lang-option"><span class="flag-placeholder russia-flag"></span> Russian</a></li>
+                    <li><a href="#" onclick="changeLanguage('de')" class="lang-option"><span class="flag-placeholder germany-flag"></span> German</a></li>
+                    <li><a href="#" onclick="changeLanguage('el')" class="lang-option"><span class="flag-placeholder greece-flag"></span> Greek</a></li>
+                    <li><a href="#" onclick="changeLanguage('ar')" class="lang-option"><span class="flag-placeholder saudi-flag"></span> Arabic</a></li>
+                    <li><a href="#" onclick="changeLanguage('he')" class="lang-option"><span class="flag-placeholder israel-flag"></span> Hebrew</a></li>
+                    <li class="google-translate-wrapper" style="display: none;">
+                      <div id="google_translate_element"></div>
+                    </li>
                   </ul>
                 </li>
               </ul>

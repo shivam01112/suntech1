@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+                                <li><a href="#" onclick="changeLanguage('en')" class="lang-option active"><i class="flag-icon flag-icon-us"></i> English</a></li>
+                            <li><a href="#" onclick="changeLanguage('ru')" class="lang-option"><i class="flag-icon flag-icon-ru"></i> Russian</a></li>
+                            <li><a href="#" onclick="changeLanguage('de')" class="lang-option"><i class="flag-icon flag-icon-de"></i> German</a></li>
+                            <li><a href="#" onclick="changeLanguage('el')" class="lang-option"><i class="flag-icon flag-icon-gr"></i> Greek</a></li>
+                            <li><a href="#" onclick="changeLanguage('ar')" class="lang-option"><i class="flag-icon flag-icon-sa"></i> Arabic</a></li>
+                            <li><a href="#" onclick="changeLanguage('he')" class="lang-option"><i class="flag-icon flag-icon-il"></i> Israeli</a></li>name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Language Translation Test</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/plugins/fontawesome.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 30px;
+            min-height: 100vh;
+        }
+        
+        .test-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .test-header {
+            background: rgba(171, 66, 87, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .test-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .instruction {
+            background: rgba(76, 175, 80, 0.2);
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .notranslate {
+            /* Prevent Google Translate from translating this element */
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <!-- Navigation with Language Dropdown -->
+        <div class="test-header">
+            <nav class="vl-mobile-menu-active">
+                <ul class="main-menu">
+                    <li><a href="#" style="color: #fff;">Home</a></li>
+                    <li><a href="#" style="color: #fff;">About</a></li>
+                    
+                    <li class="has-submenu language-dropdown">
+                        <a style="color: #fff;"><i class="fas fa-globe me-2"></i>Language</a>
+                        <ul class="submenu language-submenu">
+                            <li class="language-header">
+                                <span class="language-title">Select Language</span>
+                            </li>
+                            <li><a href="#" onclick="changeLanguage('en')" class="lang-option active"><i class="flag-icon flag-icon-us"></i> English</a></li>
+                            <li><a href="#" onclick="changeLanguage('ar')" class="lang-option"><i class="flag-icon flag-icon-sa"></i> العربية</a></li>
+                            <li><a href="#" onclick="changeLanguage('de')" class="lang-option"><i class="flag-icon flag-icon-de"></i> Deutsch</a></li>
+                            <li><a href="#" onclick="changeLanguage('es')" class="lang-option"><i class="flag-icon flag-icon-es"></i> Español</a></li>
+                            <li><a href="#" onclick="changeLanguage('fr')" class="lang-option"><i class="flag-icon flag-icon-fr"></i> Français</a></li>
+                            <li><a href="#" onclick="changeLanguage('ru')" class="lang-option"><i class="flag-icon flag-icon-ru"></i> Русский</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Test Content -->
+        <div class="content-section">
+            <h1>🌍 Language Translation Test - Working Version</h1>
+            
+            <div class="instruction">
+                <strong>Instructions:</strong> Click on any language from the dropdown above. The page will refresh and translate to your selected language using Google Translate.
+            </div>
+            
+            <div class="test-text">
+                <h2>Welcome to Suntech Engineering Services</h2>
+                <p>We are a leading staffing and recruitment agency providing professional services across various industries. Our team specializes in connecting talented professionals with exceptional opportunities in construction, oil & gas, healthcare, hospitality, and many other sectors.</p>
+            </div>
+            
+            <div class="test-text">
+                <h3>Our Services Include:</h3>
+                <ul>
+                    <li>Blue Collar Category Recruitment</li>
+                    <li>White Collar Category Placement</li>
+                    <li>Healthcare Staffing Solutions</li>
+                    <li>Training and Skill Development</li>
+                    <li>Industry-Specific Consulting</li>
+                </ul>
+            </div>
+            
+            <div class="test-text">
+                <h3>Industries We Serve:</h3>
+                <ul>
+                    <li>Construction and Infrastructure</li>
+                    <li>Oil and Gas Sector</li>
+                    <li>Electromechanical Services</li>
+                    <li>Hospitality and Tourism</li>
+                    <li>Industrial and Plantations</li>
+                    <li>Manufacturing Industries</li>
+                    <li>Transport and Excavation</li>
+                    <li>IT and Communications</li>
+                </ul>
+            </div>
+            
+            <div class="test-text">
+                <p><strong>Quality Assurance:</strong> We ensure that all our recruitment processes meet international standards and provide the best matching candidates for your organization's specific requirements.</p>
+            </div>
+        </div>
+        
+        <div class="content-section notranslate">
+            <h3>🔧 Translation Status</h3>
+            <p id="translation-status">Ready for translation testing...</p>
+            <p><small>Current URL hash: <span id="current-hash"></span></small></p>
+        </div>
+    </div>
+
+    <!-- Hidden Google Translate Element -->
+    <div id="google_translate_element" style="display: none;"></div>
+    
+    <script>
+        // Simple and reliable language change function
+        function changeLanguage(langCode) {
+            if (event) {
+                event.preventDefault();
+            }
+            
+            // Update active state
+            document.querySelectorAll('.lang-option').forEach(function(el) {
+                el.classList.remove('active');
+            });
+            
+            var clickedOption = event.target.closest('.lang-option');
+            if (clickedOption) {
+                clickedOption.classList.add('active');
+            }
+            
+            // Use Google Translate URL hash method - most reliable
+            if (langCode === 'en') {
+                // Reset to original language
+                window.location.hash = '';
+                window.location.reload();
+            } else {
+                // Set translation hash and reload
+                window.location.hash = '#googtrans(en|' + langCode + ')';
+                window.location.reload();
+            }
+        }
+        
+        // Initialize Google Translate
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,ru,de,el,ar,he',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+        
+        // Load Google Translate script
+        (function() {
+            var gtScript = document.createElement('script');
+            gtScript.type = 'text/javascript';
+            gtScript.async = true;
+            gtScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            document.head.appendChild(gtScript);
+        })();
+        
+        // Update status and hash display
+        window.addEventListener('load', function() {
+            var statusElement = document.getElementById('translation-status');
+            var hashElement = document.getElementById('current-hash');
+            
+            // Show current hash
+            hashElement.textContent = window.location.hash || 'none';
+            
+            // Check translation status
+            var hash = window.location.hash;
+            if (hash.includes('googtrans')) {
+                statusElement.innerHTML = '✅ Page is translated! Translation working correctly.';
+                statusElement.style.color = '#4CAF50';
+                
+                // Update active language based on hash
+                var matches = hash.match(/googtrans\(en\|([^)]*)\)/);
+                if (matches && matches[1]) {
+                    var langCode = matches[1];
+                    document.querySelectorAll('.lang-option').forEach(function(el) {
+                        el.classList.remove('active');
+                        var onclick = el.getAttribute('onclick');
+                        if (onclick && onclick.includes("'" + langCode + "'")) {
+                            el.classList.add('active');
+                        }
+                    });
+                }
+            } else {
+                statusElement.innerHTML = '🌐 Ready for translation testing. Click any language above.';
+                statusElement.style.color = '#fff';
+            }
+            
+            // Hide Google Translate banner
+            setTimeout(function() {
+                var banner = document.querySelector('.goog-te-banner-frame');
+                if (banner) {
+                    banner.style.display = 'none';
+                }
+                document.body.style.top = '0px';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

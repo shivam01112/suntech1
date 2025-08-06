@@ -23682,7 +23682,7 @@ img {
   line-height: 18px;
   display: inline-block;
   transition: all 0.4s;
-  background: var(--ztc-bg-bg-4);
+  background: #6c6c6c;
   border-radius: 10px;
   padding: 18px 90px;
 }
@@ -25678,4 +25678,451 @@ body {
 
     .VIpgJd-ZVi9od-xl07Ob-OEVmcd{
   margin: 0px !important;
+}
+
+/* Enhanced Language Dropdown Styling */
+.language-dropdown .submenu.language-submenu {
+  background: linear-gradient(135deg, #ab4257 0%, #9e3d50 100%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  min-width: 220px;
+  padding: 8px 0;
+  margin-top: 5px;
+}
+
+.language-dropdown .submenu.language-submenu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #ab4257;
+}
+
+.language-header {
+  padding: 12px 16px 8px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+  margin-bottom: 8px !important;
+}
+
+.language-title {
+  color: #fff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.language-title::before {
+  content: '\f0ac';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-right: 8px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.google-translate-wrapper {
+  padding: 8px 16px !important;
+  border: none !important;
+}
+
+/* Style Google Translate Widget */
+#google_translate_element {
+  background: transparent !important;
+  width: 100% !important;
+}
+
+#google_translate_element .goog-te-gadget {
+  background: transparent !important;
+  border: none !important;
+  font-family: inherit !important;
+  width: 100% !important;
+}
+
+#google_translate_element .goog-te-gadget-simple {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  padding: 10px 15px !important;
+  transition: all 0.3s ease !important;
+  width: 100% !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  position: relative !important;
+}
+
+#google_translate_element .goog-te-gadget-simple:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value {
+  color: #fff !important;
+  font-weight: 500 !important;
+}
+
+#google_translate_element .goog-te-gadget-simple .goog-te-menu-value span {
+  color: #fff !important;
+}
+
+/* Style the Google Translate dropdown menu */
+.goog-te-menu-frame {
+  background: #ab4257 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  margin-top: 5px !important;
+}
+
+.goog-te-menu2 {
+  background: #ab4257 !important;
+  border-radius: 8px !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+}
+
+.goog-te-menu2-item {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 8px 15px !important;
+  color: #fff !important;
+  font-size: 14px !important;
+  transition: background 0.2s ease !important;
+}
+
+.goog-te-menu2-item:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.goog-te-menu2-item:last-child {
+  border-bottom: none !important;
+}
+
+.goog-te-menu2-item span {
+  color: #fff !important;
+}
+
+.goog-te-menu2-item-selected {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Custom scrollbar for Google Translate dropdown */
+.goog-te-menu2::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+.goog-te-menu2::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 3px !important;
+}
+
+.goog-te-menu2::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-radius: 3px !important;
+}
+
+.goog-te-menu2::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Hide Google Translate branding and unwanted elements */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+.goog-te-gadget .goog-te-gadget-simple .goog-te-menu-value img {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+#goog-gt-tt, .goog-te-balloon-frame {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Additional Google Translate fixes */
+.goog-te-menu-value:hover {
+  text-decoration: none !important;
+}
+
+.goog-te-gadget-icon {
+  display: none !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value:before {
+  content: '🌐' !important;
+  margin-right: 8px !important;
+  font-size: 16px !important;
+}
+
+/* Ensure proper positioning */
+.language-submenu {
+  z-index: 9999 !important;
+}
+
+/* Language option styling */
+.lang-option {
+  display: flex !important;
+  align-items: center !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  padding: 12px 16px !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  position: relative !important;
+}
+
+.lang-option:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05)) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  transform: translateX(5px) !important;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1) !important;
+}
+
+.lang-option:last-child {
+  border-bottom: none !important;
+}
+
+/* CSS Flag Designs */
+.flag-placeholder {
+  display: inline-block !important;
+  width: 24px !important;
+  height: 18px !important;
+  margin-right: 12px !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* USA Flag */
+.usa-flag {
+  background: linear-gradient(to bottom, 
+    #B22234 0%, #B22234 7.7%, 
+    #FFFFFF 7.7%, #FFFFFF 15.4%, 
+    #B22234 15.4%, #B22234 23.1%, 
+    #FFFFFF 23.1%, #FFFFFF 30.8%, 
+    #B22234 30.8%, #B22234 38.5%, 
+    #FFFFFF 38.5%, #FFFFFF 46.2%, 
+    #B22234 46.2%, #B22234 53.9%, 
+    #FFFFFF 53.9%, #FFFFFF 61.6%, 
+    #B22234 61.6%, #B22234 69.3%, 
+    #FFFFFF 69.3%, #FFFFFF 77%, 
+    #B22234 77%, #B22234 84.7%, 
+    #FFFFFF 84.7%, #FFFFFF 92.4%, 
+    #B22234 92.4%, #B22234 100%) !important;
+}
+
+.usa-flag::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 40% !important;
+  height: 55% !important;
+  background: #3C3B6E !important;
+}
+
+/* Russia Flag */
+.russia-flag {
+  background: linear-gradient(to bottom, 
+    #FFFFFF 0%, #FFFFFF 33.33%, 
+    #0052CC 33.33%, #0052CC 66.66%, 
+    #CC0000 66.66%, #CC0000 100%) !important;
+}
+
+/* Germany Flag */
+.germany-flag {
+  background: linear-gradient(to bottom, 
+    #000000 0%, #000000 33.33%, 
+    #DD0000 33.33%, #DD0000 66.66%, 
+    #FFCE00 66.66%, #FFCE00 100%) !important;
+}
+
+/* Greece Flag */
+.greece-flag {
+  background: linear-gradient(to bottom, 
+    #0D5EAF 0%, #0D5EAF 11.11%, 
+    #FFFFFF 11.11%, #FFFFFF 22.22%, 
+    #0D5EAF 22.22%, #0D5EAF 33.33%, 
+    #FFFFFF 33.33%, #FFFFFF 44.44%, 
+    #0D5EAF 44.44%, #0D5EAF 55.55%, 
+    #FFFFFF 55.55%, #FFFFFF 66.66%, 
+    #0D5EAF 66.66%, #0D5EAF 77.77%, 
+    #FFFFFF 77.77%, #FFFFFF 88.88%, 
+    #0D5EAF 88.88%, #0D5EAF 100%) !important;
+}
+
+/* Saudi Arabia Flag */
+.saudi-flag {
+  background: #006C35 !important;
+}
+
+.saudi-flag::after {
+  content: '🗡️' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  color: #FFFFFF !important;
+  font-size: 10px !important;
+}
+
+/* Israel Flag */
+.israel-flag {
+  background: linear-gradient(to bottom, 
+    #FFFFFF 0%, #FFFFFF 25%, 
+    #0038B8 25%, #0038B8 37.5%, 
+    #FFFFFF 37.5%, #FFFFFF 62.5%, 
+    #0038B8 62.5%, #0038B8 75%, 
+    #FFFFFF 75%, #FFFFFF 100%) !important;
+}
+
+.israel-flag::before {
+  content: '✡️' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  color: #0038B8 !important;
+  font-size: 8px !important;
+}
+
+/* Hover effects for flags */
+.lang-option:hover .flag-placeholder {
+  transform: scale(1.1) !important;
+  border-color: rgba(37, 211, 102, 0.6) !important;
+  box-shadow: 
+    0 4px 8px rgba(37, 211, 102, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3) !important;
+}
+
+.lang-option.active .flag-placeholder {
+  border-color: #25d366 !important;
+  box-shadow: 
+    0 3px 6px rgba(37, 211, 102, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Country flag emojis - positioned before text */
+.lang-option {
+  position: relative !important;
+}
+
+.lang-option span.flag-emoji {
+  font-size: 18px !important;
+  margin-right: 10px !important;
+  display: inline-block !important;
+  width: 24px !important;
+  text-align: center !important;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3)) !important;
+}
+
+/* Flag emoji alternatives using ::before for better compatibility */
+.flag-icon {
+  margin-right: 10px !important;
+  font-size: 18px !important;
+  width: 24px !important;
+  height: 18px !important;
+  display: inline-block !important;
+  text-align: center !important;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3)) !important;
+}
+
+.flag-icon-us::before { content: '🇺🇸'; }
+.flag-icon-sa::before { content: '🇸🇦'; }
+.flag-icon-de::before { content: '🇩🇪'; }
+.flag-icon-gr::before { content: '🇬🇷'; }
+.flag-icon-il::before { content: '🇮🇱'; }
+.flag-icon-ru::before { content: '🇷🇺'; }
+.flag-icon-es::before { content: '🇪🇸'; }
+.flag-icon-fr::before { content: '🇫🇷'; }
+.flag-icon-it::before { content: '🇮🇹'; }
+.flag-icon-pt::before { content: '🇵🇹'; }
+.flag-icon-cn::before { content: '🇨🇳'; }
+
+/* Active language highlighting */
+.lang-option.active {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.3), rgba(76, 175, 80, 0.1)) !important;
+  font-weight: 600 !important;
+  border-left: 3px solid #4CAF50 !important;
+}
+
+.lang-option.active::after {
+  content: '✓' !important;
+  margin-left: auto !important;
+  color: #4CAF50 !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important;
+}
+
+/* Language dropdown icon styling */
+.language-dropdown > a {
+  position: relative !important;
+}
+
+.language-dropdown > a::after {
+  /* content: '\f0d7' !important; */
+  font-family: 'Font Awesome 5 Free' !important;
+  font-weight: 900 !important;
+  margin-left: 8px !important;
+  transition: transform 0.3s ease !important;
+}
+
+.language-dropdown:hover > a::after {
+  transform: rotate(180deg) !important;
+}
+
+/* Animation for dropdown */
+.language-dropdown .submenu.language-submenu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.language-dropdown:hover .submenu.language-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  display: block !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 991px) {
+  .language-dropdown .submenu.language-submenu {
+    position: static !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    margin: 8px 0 !important;
+  }
+  
+  .language-dropdown .submenu.language-submenu::before {
+    display: none !important;
+  }
 }
