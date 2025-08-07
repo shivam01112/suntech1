@@ -2938,6 +2938,7 @@ img {
   .service-inner-area .service-inner-boxarea {
     padding: 24px 24px 0 24px;
   }
+
 }
 @media (max-width: 767px) {
   .service-inner-area .service-inner-boxarea {
@@ -15949,6 +15950,18 @@ img {
   .work10 .works-main-widget-area2 .works8-boxarea h5 {
     display: none;
   }
+  .submenu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 0px solid transparent !important;
+}
 }
 
 /*============= WORK CSS AREA ===============*/
@@ -23946,7 +23959,7 @@ background-color: #fff;
 .submenu {
   position: absolute;
     top: 100%;
-    left: 0;
+    left: -37%;
     background: #ab4257;
    
     min-width: 196px;
@@ -26134,4 +26147,19 @@ body {
   .language-dropdown .submenu.language-submenu::before {
     display: none !important;
   }
+  
+}
+
+
+.submenu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left:50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #ab4257;
 }
