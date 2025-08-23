@@ -2,7 +2,7 @@
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
         pageLanguage: 'en',
-        includedLanguages: 'en,ru,de,el,ar,he',
+        includedLanguages: 'en,ru,de,el,ar,iw',
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
         autoDisplay: false,
         multilanguagePage: true
@@ -10,9 +10,11 @@ function googleTranslateElementInit() {
 }
 
 // Simple and reliable language change function using URL hash
-function changeLanguage(langCode) {
-    if (event) {
-        event.preventDefault();
+function changeLanguage(langCode, e) {
+    // Normalize event (support being called without explicit event)
+    var ev = e || window.event || null;
+    if (ev && typeof ev.preventDefault === 'function') {
+        ev.preventDefault();
     }
     
     // Update active state in UI immediately
@@ -20,10 +22,17 @@ function changeLanguage(langCode) {
         el.classList.remove('active');
     });
     
-    var clickedOption = event.target.closest('.lang-option');
+    // Mark clicked element active if available
+    var clickedOption = null;
+    if (ev && ev.target && typeof ev.target.closest === 'function') {
+        clickedOption = ev.target.closest('.lang-option');
+    }
     if (clickedOption) {
         clickedOption.classList.add('active');
     }
+
+    // Map user-facing language codes to any internal Google codes (legacy 'iw' used for Hebrew)
+    var internalLang = (langCode === 'he') ? 'iw' : langCode;
     
     // Use Google Translate URL hash method - most reliable approach
     if (langCode === 'en') {
@@ -43,8 +52,8 @@ function changeLanguage(langCode) {
             window.location.reload(true);
         }, 200);
     } else {
-        // Set translation hash and reload for other languages
-        window.location.hash = '#googtrans(en|' + langCode + ')';
+        // Set translation hash using internalLang and reload
+        window.location.hash = '#googtrans(en|' + internalLang + ')';
         window.location.reload();
     }
     
@@ -136,16 +145,19 @@ document.addEventListener('DOMContentLoaded', function() {
         var hash = window.location.hash;
         
         if (hash.includes('googtrans')) {
-            // Extract language code from hash
+            // Extract language code from hash (accept both 'he' and legacy 'iw')
             var matches = hash.match(/googtrans\(en\|([^)]*)\)/);
             if (matches && matches[1]) {
-                var langCode = matches[1];
+                var langCodeFromHash = matches[1];
+                // map legacy 'iw' to 'he' for UI matching
+                var uiLang = (langCodeFromHash === 'iw') ? 'he' : langCodeFromHash;
                 
-                // Update UI to reflect current language
+                // Update UI to reflect current language (match onclick attribute or data)
                 document.querySelectorAll('.lang-option').forEach(function(el) {
                     el.classList.remove('active');
-                    var onclick = el.getAttribute('onclick');
-                    if (onclick && onclick.includes("'" + langCode + "'")) {
+                    var onclick = el.getAttribute('onclick') || '';
+                    // Check for both user-facing code and internal code
+                    if (onclick.indexOf("'" + uiLang + "'") !== -1 || onclick.indexOf("'" + langCodeFromHash + "'") !== -1) {
                         el.classList.add('active');
                     }
                 });
